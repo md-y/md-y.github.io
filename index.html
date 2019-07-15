@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>m;dy</title>
+	<style>
+		.archived::before {
+			content: "Archived ";
+			color: orange;
+			font-style: italic;
+		}
+
+		.fork::before {
+			content: "Fork ";
+			color: green;
+			font-style: italic;
+		}
+
+		.license {
+			color: gray;
+			font-style: italic;
+		}
+	</style>
+</head>
+
+<body class="bg-dark">
+	<header>
+		<div class="navbar navbar-dark bg-dark shadow">
+			<div class="navbar-brand">
+				<strong>m;dy</strong>
+			</div>
+			<a class="btn btn-outline-secondary mx-1" href="https://github.com/md-y/" target="_blank">GitHub</a>
+		</div>
+	</header>
+
+	<div id="content" role="main"> </div>
+
+	<script>
+		fetch("https://api.github.com/users/md-y/repos").then(async (res) => {
+			repos = await res.json();
+			repos.sort((a, b) => {
+				return b.stargazers_count - a.stargazers_count;
+			});
+			content = document.getElementById("content");
+
+			for (repo of repos) {
+				titleClasses = "card-title";
+				if (repo.archived) titleClasses += " archived";
+				if (repo.fork) titleClasses += " fork";
+
+				elementHTML = `<div class="card m-4"> <div class="card-body">`;
+				elementHTML += `<h5 class="${titleClasses}">${repo.full_name}</h5>`;
+				if (repo.license) elementHTML += `<small class="license">${repo.license.name}</small>`
+				elementHTML += `<p class="card-text">${repo.description}</p>`;
+				elementHTML += `<a href="${repo.html_url}" class="btn btn-primary" target="_blank">Open Repo</a>`;
+				if (repo.homepage.includes("md-y.github.io")) elementHTML += `<a href="${repo.homepage}" class="btn btn-primary ml-1">Run</a>`
+				elementHTML += `</div></div>`;
+
+				let elem = document.createElement("div");
+				elem.innerHTML = elementHTML;
+				content.append(elem);
+			}
+		});
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

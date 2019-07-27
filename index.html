@@ -37,7 +37,14 @@
 		</div>
 	</header>
 
-	<div id="content" role="main"> </div>
+	<div id="content" role="main">
+		<noscript>
+			<h5 class="m-3 text-white">
+				Cannot load repositories without JavaScript enabled. <br>
+				But you can see my GitHub profile <a href="https://github.com/md-y">here</a>.
+			</h5>
+		</noscript>
+	</div>
 
 	<script>
 		fetch("https://api.github.com/users/md-y/repos").then(async (res) => {

@@ -1,0 +1,21 @@
+.archived::before {
+    content: "Archived ";
+    color: orange;
+    font-style: italic;
+}
+
+.fork::before {
+    content: "Fork ";
+    color: green;
+    font-style: italic;
+}
+
+.license {
+    color: gray;
+    font-style: italic;
+}
+
+.footer-badge {
+    font-weight: 700;
+    text-transform: capitalize;
+}

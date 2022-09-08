@@ -1,4 +1,4 @@
-import { ActionIcon, Text, HoverCard } from "@mantine/core"
+import { ActionIcon, Text, HoverCard, Tooltip } from "@mantine/core"
 import React from "react"
 
 const RepoCardButton: React.FC<{
@@ -7,21 +7,11 @@ const RepoCardButton: React.FC<{
   hovertext: string
 }> = ({ href, icon, hovertext }) => {
   return (
-    <HoverCard position="bottom-end">
-      <HoverCard.Target>
-        <ActionIcon
-          size="md"
-          component="a"
-          href={href}
-          target="_blank"
-        >
-          {icon}
-        </ActionIcon>
-      </HoverCard.Target>
-      <HoverCard.Dropdown>
-        <Text>{hovertext}</Text>
-      </HoverCard.Dropdown>
-    </HoverCard>
+    <Tooltip label={hovertext}>
+      <ActionIcon size="md" component="a" href={href} target="_blank">
+        {icon}
+      </ActionIcon>
+    </Tooltip>
   )
 }
 

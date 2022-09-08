@@ -11,7 +11,6 @@ const RepoCardButton: React.FC<{
       <HoverCard.Target>
         <ActionIcon
           size="md"
-          variant="light"
           component="a"
           href={href}
           target="_blank"

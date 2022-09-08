@@ -1,17 +1,12 @@
-import { Group, Text } from "@mantine/core"
+import { Text } from "@mantine/core"
 import { FaFire } from "react-icons/fa"
-import GithubButton from "./GithubButton"
 import RepoCardButton from "./RepoCardButton"
-import LanguageList from "./LanguageList"
+import BadgeList from "./BadgeList"
 import RepoCardFooter from "./RepoCardFooter"
 
 const VideoViewerCard: React.FC = () => {
   return (
     <>
-      <Group position="apart">
-        <Text weight={700}>videoviewer</Text>
-      </Group>
-
       <Text>A Spigot plugin that allows video playback on entities.</Text>
 
       <iframe
@@ -21,13 +16,12 @@ const VideoViewerCard: React.FC = () => {
       />
 
       <RepoCardFooter>
-        <GithubButton repo="videoviewer" />
         <RepoCardButton
           href="https://www.curseforge.com/minecraft/bukkit-plugins/videoviewer"
-          icon={<FaFire size="md" />}
+          icon={<FaFire size="md" color="#FFCCBC" />}
           hovertext="View on CurseForge"
         />
-        <LanguageList languages={["java"]} />
+        <BadgeList badges={["java"]} />
       </RepoCardFooter>
     </>
   )

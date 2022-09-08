@@ -1,42 +1,38 @@
-import { Badge, Group, Text } from "@mantine/core"
-import { BsBoxArrowUpRight } from "react-icons/bs"
+import { Text } from "@mantine/core"
+import { MdHome } from "react-icons/md"
 import React from "react"
 import { Repo } from "../common/types"
-import GithubButton from "./GithubButton"
-import LanguageList from "./LanguageList"
+import BadgeList from "./BadgeList"
 import RepoCardFooter from "./RepoCardFooter"
 import RepoCardButton from "./RepoCardButton"
 
 const RepoCard: React.FC<{ repo: Repo }> = ({ repo }) => {
-  const languages = []
-  if (repo.language) languages.push(repo.language)
+  const badges = []
+  if (repo.language) badges.push(repo.language)
 
   const usesNode = (repo.topics ?? [])
     .map((topic) => topic.toLowerCase())
     .some((topic) => topic.includes("node"))
-  if (usesNode) languages.push("node")
+  if (usesNode) badges.push("node")
+
+  if (repo.fork) badges.push("Fork")
+  if (repo.archived) badges.push("Archived")
 
   return (
     <>
-      <Group position="apart">
-        <Text weight={700}>{repo?.name}</Text>
-      </Group>
-
       <Text>{repo.description}</Text>
 
       <RepoCardFooter>
-        <GithubButton repo={repo.name} />
         {repo.homepage && (
           <>
             <RepoCardButton
               href={repo.homepage}
-              icon={<BsBoxArrowUpRight />}
-              hovertext="Go to Website"
+              icon={<MdHome size="1.4em" />}
+              hovertext="Go to Homepage"
             />
           </>
         )}
-        {languages.length > 0 && <LanguageList languages={languages} />}
-        {repo.archived && <Badge color="red">Archived</Badge>}
+        {badges.length > 0 && <BadgeList badges={badges} />}
       </RepoCardFooter>
     </>
   )

@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - master
-name: Update Docs
+name: Export Website
 jobs:
   updateDocs:
     name: Export Website Static HTML

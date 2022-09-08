@@ -12,7 +12,16 @@ const RepoCard: React.FC<{ repo: Repo }> = ({ repo }) => {
     return <RepoCardBody repo={repo} />
   }
 
-  return <Card mb="1em">{getBody()}</Card>
+  return (
+    <Card mb="1em">
+      <Group>
+        <Text weight={700} component="a" href={repo.html_url} target="_blank">
+          {repo.name}
+        </Text>
+      </Group>
+      {getBody()}
+    </Card>
+  )
 }
 
 export default RepoCard

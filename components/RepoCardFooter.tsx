@@ -1,4 +1,4 @@
-import { Card, Group } from "@mantine/core"
+import { Group } from "@mantine/core"
 import React from "react"
 
 const RepoCardFooter: React.FC<{ children: React.ReactNode }> = ({

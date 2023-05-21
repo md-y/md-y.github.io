@@ -1,33 +1,36 @@
 {
-  "name": "mantine-minimal-next-template",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "export": "next build && next export",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.10.0",
-    "@emotion/server": "^11.10.0",
-    "@mantine/core": "5.1.0",
-    "@mantine/hooks": "5.1.0",
-    "@mantine/next": "5.1.0",
-    "@octokit/rest": "^19.0.4",
-    "next": "12.2.4",
-    "react": "18.2.0",
-    "react-countup": "^6.3.1",
-    "react-dom": "18.2.0",
-    "react-icons": "^4.4.0"
-  },
-  "devDependencies": {
-    "@types/node": "18.6.4",
-    "@types/react": "18.0.15",
-    "@types/react-dom": "18.0.6",
-    "eslint": "8.21.0",
-    "eslint-config-next": "12.2.4",
-    "typescript": "4.7.4"
-  }
+	"name": "md-y.github.io",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.5.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"sass": "^1.59.3",
+		"svelte": "^3.54.0",
+		"svelte-check": "^3.0.1",
+		"svelte-preprocess": "^5.0.3",
+		"tslib": "^2.4.1",
+		"typescript": "^4.9.3",
+		"vite": "^4.0.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"@sveltejs/adapter-static": "^2.0.1"
+	}
 }

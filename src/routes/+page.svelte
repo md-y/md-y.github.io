@@ -1,62 +1,84 @@
 <script lang="ts">
-  import ColorColumn from "$lib/components/ColorColumn.svelte"
-
-  let colorArray = ["242038", "725ac1", "8d86c9", "cac4ce", "f7ece1"].reverse()
-  // let colorArray = ["a7a5c6", "8797b2", "6d8a96", "5d707f", "66ced6"].reverse()
+  import ColorColumn from "$lib/components/ColorColumn.svelte";
+  import HomepageLink from "$lib/components/HomepageLink.svelte";
 </script>
 
-<div id="background">
-  <div id="colors-container">
-    {#each colorArray as color, i (color)}
-      <ColorColumn color={"#" + color} on:click={() => (colorArray = [color])}>
-        {#if colorArray.length > 1}
-          {#if i == 0}
-            <h1>Samuel Preston</h1>
-          {/if}
-          {#if i == 1}
-            <h1>Portfolio</h1>
-          {/if}
-          {#if i == 2}
-            <h1>Resume</h1>
-          {/if}
-        {/if}
-      </ColorColumn>
-    {/each}
+<ColorColumn color="#f7ece1" noiseColor="#ffffff" />
+<ColorColumn color="#cac4ce" noiseOpacity={0.7}>
+  <svg id="name-svg" class="keep-full-height" viewBox="0 0 117 20">
+    <g class="name-large">
+      <text x="0" y="11" alignment-baseline="middle">SAM PRESTON</text>
+    </g>
+    <g class="name-small">
+      <text x="0" y="3" font-size="50%" alignment-baseline="hanging">
+        SAMUEL
+      </text>
+      <text x="0" y="17" font-size="50%" alignment-baseline="baseline">
+        PRESTON
+      </text>
+    </g>
+  </svg>
+</ColorColumn>
+<ColorColumn color="#8d86c9" noiseOpacity={0.7}>
+  <div id="menu-container">
+    <HomepageLink href="about">About me</HomepageLink>
+    <HomepageLink href="portfolio">Portfolio</HomepageLink>
+    <HomepageLink href="resume">Resume</HomepageLink>
   </div>
-</div>
+</ColorColumn>
+<ColorColumn color="#725ac1" noiseOpacity={0.7} />
+<ColorColumn color="#242038" noiseColor="#ffffff" noiseOpacity={0.08} />
 
 <style lang="scss">
-  @use "sass:math";
   @import "global.scss";
 
-  $extra-padding: math.abs(math.tan($global-tilt-angle) * 100vw * 0.5);
+  $col-count: 5;
+  $max-col-height: calc($global-total-height / $col-count);
 
-  #background {
+  #name-svg {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-color: black;
+    left: 0.5em;
+    height: $max-col-height;
 
-    #colors-container {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      top: -$extra-padding;
-      height: calc(100vh + $extra-padding * 2);
-      width: 100vw;
-
-      h1 {
-        position: absolute;
-        left: 0.5em;
-        bottom: 0.5em;
-        font-size: 3em;
-        transform: skewY(-$global-tilt-angle) rotate($global-tilt-angle);
-        color: black;
-        // font-family: "Didact Gothic", serif;
-        // font-weight: 1000;
+    @include breakpoint-port() {
+      .name-large {
+        display: none;
       }
+      .name-small {
+        display: block;
+      }
+    }
+    @include breakpoint-land() {
+      .name-large {
+        display: block;
+      }
+      .name-small {
+        display: none;
+      }
+    }
+
+    text {
+      fill: $global-dark-text;
+      font-family: "Inter", serif;
+      font-weight: 900;
+    }
+  }
+
+  #menu-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: $max-col-height;
+
+    @include breakpoint-port() {
+      flex-direction: column;
+      padding-left: 0.5em;
+    }
+    @include breakpoint-land() {
+      flex-direction: row;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      align-items: center;
     }
   }
 </style>

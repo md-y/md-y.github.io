@@ -1,1 +1,20 @@
-$global-tilt-angle: -20deg;
+@use "sass:math";
+
+$global-tilt-angle: -8deg;
+$global-dark-text: #242038;
+
+$global-extra-padding: math.abs(math.tan($global-tilt-angle) * 100vw * 0.5);
+$global-total-height: calc(100vh + $global-extra-padding * 2);
+
+$global-orientation-breakpoint: 1.41;
+@mixin breakpoint-port() {
+  @media (max-aspect-ratio: $global-orientation-breakpoint) {
+    @content;
+  }
+}
+
+@mixin breakpoint-land() {
+  @media (min-aspect-ratio: $global-orientation-breakpoint) {
+    @content;
+  }
+}

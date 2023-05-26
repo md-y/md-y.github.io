@@ -3,9 +3,13 @@
   import HomepageLink from "$lib/components/HomepageLink.svelte";
 </script>
 
+<svelte:head>
+  <title>Samuel Preston</title>
+</svelte:head>
+
 <ColorColumn color="#f7ece1" noiseColor="#ffffff" />
 <ColorColumn color="#cac4ce" noiseOpacity={0.7}>
-  <svg id="name-svg" class="keep-full-height" viewBox="0 0 117 20">
+  <svg id="name-svg" viewBox="0 0 117 20">
     <g class="name-large">
       <text x="0" y="11" alignment-baseline="middle">SAM PRESTON</text>
     </g>

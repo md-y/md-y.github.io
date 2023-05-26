@@ -6,8 +6,7 @@
   color="#242038"
   noiseColor="#ffffff"
   noiseOpacity={0.08}
-  order={10}
-  solo
+  order={20}
 >
   <h1>This is the portfolio page</h1>
   <br />

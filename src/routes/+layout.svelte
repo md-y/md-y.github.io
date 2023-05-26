@@ -1,7 +1,7 @@
 <svelte:head>
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Inter:black,bold"
+    href="https://fonts.googleapis.com/css?family=Inter:black,bold,regular|Roboto:light"
   />
 </svelte:head>
 

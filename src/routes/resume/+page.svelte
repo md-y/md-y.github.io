@@ -7,7 +7,6 @@
   noiseColor="#ffffff"
   noiseOpacity={0.08}
   order={10}
-  solo
 >
   <h1>This is the resume page</h1>
   <br />

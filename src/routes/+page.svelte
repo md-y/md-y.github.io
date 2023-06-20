@@ -7,8 +7,8 @@
   <title>Samuel Preston</title>
 </svelte:head>
 
-<ColorColumn color="#f7ece1" noiseColor="#ffffff" />
-<ColorColumn color="#cac4ce" noiseOpacity={0.7}>
+<ColorColumn color="#f7ece1" noiseOpacity={1} />
+<ColorColumn color="#cac4ce" noiseOpacity={0.9}>
   <svg id="name-svg" viewBox="0 0 117 20">
     <g class="name-large">
       <text x="0" y="11" alignment-baseline="middle">SAM PRESTON</text>
@@ -23,15 +23,15 @@
     </g>
   </svg>
 </ColorColumn>
-<ColorColumn color="#8d86c9" noiseOpacity={0.7}>
+<ColorColumn color="#8d86c9" noiseOpacity={0.6}>
   <div id="menu-container">
-    <HomepageLink href="about">About me</HomepageLink>
+    <HomepageLink href="about" textAlign="start">About me</HomepageLink>
     <HomepageLink href="portfolio">Portfolio</HomepageLink>
-    <HomepageLink href="resume">Resume</HomepageLink>
+    <HomepageLink href="resume" textAlign="end">Resume</HomepageLink>
   </div>
 </ColorColumn>
-<ColorColumn color="#725ac1" noiseOpacity={0.7} />
-<ColorColumn color="#242038" noiseColor="#ffffff" noiseOpacity={0.08} />
+<ColorColumn color="#725ac1" noiseOpacity={0.5} />
+<ColorColumn color="#242038" noiseOpacity={0.4} />
 
 <style lang="scss">
   @import "global.scss";
@@ -39,12 +39,15 @@
   $col-count: 5;
   $max-col-height: calc($global-total-height / $col-count);
 
+  $left-margin-land: 2rem;
+  $left-margin-port: 1rem;
+
   #name-svg {
     position: absolute;
-    left: 0.5em;
     height: $max-col-height;
 
     @include breakpoint-port() {
+      left: $left-margin-port;
       .name-large {
         display: none;
       }
@@ -53,6 +56,7 @@
       }
     }
     @include breakpoint-land() {
+      left: $left-margin-land;
       .name-large {
         display: block;
       }
@@ -63,7 +67,7 @@
 
     text {
       fill: $global-dark-text;
-      font-family: "Inter", serif;
+      font-family: "Inter", sans-serif;
       font-weight: 900;
     }
   }
@@ -71,18 +75,19 @@
   #menu-container {
     display: flex;
     position: absolute;
-    width: 100%;
     height: $max-col-height;
+    justify-content: space-between;
 
     @include breakpoint-port() {
       flex-direction: column;
-      padding-left: 0.5em;
+      width: 100%;
+      padding-left: $left-margin-port;
     }
     @include breakpoint-land() {
       flex-direction: row;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
       align-items: center;
+      padding-left: $left-margin-land;
+      width: calc(100% - $left-margin-land * 2);
     }
   }
 </style>

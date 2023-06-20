@@ -1,7 +1,12 @@
+<script lang="ts">
+  import Stylesheet from "$lib/components/Stylesheet.svelte";
+</script>
+
 <svelte:head>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Inter:black,bold,regular|Roboto:light"
+  <Stylesheet href="https://fonts.googleapis.com/css?family=Inter:black,bold" />
+  <Stylesheet
+    href="https://fonts.googleapis.com/css?family=Inter:regular|Roboto:regular"
+    defer
   />
 </svelte:head>
 
@@ -20,8 +25,6 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    // This helps hide the faint, anti-aliasing-caused lines seen when the columns are moving
-    background-image: linear-gradient(to bottom, white, black);
   }
 
   #colors-container {

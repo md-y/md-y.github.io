@@ -1,8 +1,9 @@
 <script lang="ts">
   export let href: string;
+  export let textAlign = "center";
 </script>
 
-<div class="homepage-link">
+<div class="homepage-link" style:--text-align={textAlign}>
   <a {href}><slot /></a>
 </div>
 
@@ -11,9 +12,15 @@
 
   .homepage-link {
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint-land() {
+      justify-content: var(--text-align);
+    }
 
     a {
-      font-family: "Inter", serif;
+      font-family: "Inter", sans-serif;
       text-decoration: none;
       font-weight: 700;
 

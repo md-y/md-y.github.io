@@ -3,9 +3,8 @@
 </script>
 
 <svelte:head>
-  <Stylesheet href="https://fonts.googleapis.com/css?family=Inter:black,bold" />
   <Stylesheet
-    href="https://fonts.googleapis.com/css?family=Inter:regular|Roboto:regular"
+    href="https://fonts.googleapis.com/css?family=Inter:black,bold,regular|Roboto:regular&display=swap"
     defer
   />
 </svelte:head>

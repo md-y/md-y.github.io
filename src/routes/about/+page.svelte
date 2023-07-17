@@ -1,147 +1,81 @@
 <script lang="ts">
   import ColorColumn from "$lib/components/ColorColumn.svelte";
-  import type { TransitionConfig } from "svelte/types/runtime/transition";
-  import { expoInOut } from "svelte/easing";
-
-  function flexTransition(node: Element): TransitionConfig {
-    return {
-      duration: 1000,
-      delay: 0,
-      css: (t: number) => `flex: 0 0 ${expoInOut(t) * 2}rem;`,
-    };
-  }
+  import MdiChevronUp from "~icons/mdi/chevron-up";
 </script>
 
-<svelte:head>
-  <title>About me</title>
-</svelte:head>
-
-<ColorColumn color="#242038" noiseOpacity={0.4} order={11}>
-  <div id="title-container">
+<ColorColumn color="#242038" noiseOpacity={0.25} order={21} size={2}>
+  <a id="back-button" href="/">
+    <MdiChevronUp />
+  </a>
+  <div class="text-container title">
     <h1>Hi, I'm Sam</h1>
   </div>
 </ColorColumn>
-<ColorColumn color="#f7ece1" noiseOpacity={0} size={4} order={12}>
-  <div id="about-colors-container">
-    <div class="color-row row-1" in:flexTransition out:flexTransition>
-      <div />
-    </div>
-    <div class="color-row row-2" in:flexTransition out:flexTransition>
-      <div />
-    </div>
-    <div class="color-row row-3" in:flexTransition out:flexTransition>
-      <div />
-    </div>
-    <div id="about-paragraph-container">
-      <p>
-        I'm a sophomore National Merit scholar studying Software Engineering at
-        the University of Texas at Dallas (UTD). Although I grew up in rural
-        Colorado, I am currently living in Richardson, Texas, to attend UTD.
-        <br />
-        <br />
-        I have recently worked as a full-stack developer and IOT security researcher
-        at UTD's chapter of the Association of Computing Machinery (ACM), the country's
-        <a
-          href="https://cs.utdallas.edu/acm-utd-1-chapter-for-school-service/"
-          target="_blank"
-        >
-          best chapter
-        </a>
-        for school service in 2023.
-        <br />
-        <br />
-        I'm also a member of the Collegium V Honors society, and have been awarded
-        a spot on the
-        <a href="https://www.utdallas.edu/current/deans-list/" target="_blank">
-          Dean's List
-        </a>
-        every semester I have attended UTD.
-      </p>
-    </div>
+<ColorColumn color="#2D3142" noiseOpacity={0.25} order={25}>
+  <div class="text-container list">
+    <h1>National Merit</h1>
+  </div>
+</ColorColumn>
+<ColorColumn color="#4F5D75" noiseOpacity={0.3} order={26}>
+  <div class="text-container list">
+    <h1>Software Engineering Major</h1>
+  </div>
+</ColorColumn>
+<ColorColumn color="#7D8CA3" noiseOpacity={0.5} order={27}>
+  <div class="text-container list">
+    <h1>University of Texas at Dallas</h1>
   </div>
 </ColorColumn>
 
 <style lang="scss">
-  @use "sass:math";
   @import "global.scss";
+  @import "about.scss";
 
-  $left-margin: 2rem;
-
-  $rows: (#725ac1 0.6) (#8d86c9 0.7) (#cac4ce 1);
-  $row-count: length($rows);
-
-  #title-container {
+  .text-container {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+
     height: 100%;
+    margin-left: $base-margin;
 
     @include unskew-rotate();
 
+    &.title h1 {
+      font-size: 12vmin;
+      align-self: flex-end;
+    }
+
+    &.list h1 {
+      border-left: 0.2ch solid $global-light-text;
+      padding-left: 0.4ch;
+      margin-left: 0.4ch;
+    }
+
     h1 {
+      display: block;
       margin: 0;
-      color: #f7ece1;
+      color: $global-light-text;
       font-family: "Inter", sans-serif;
       font-weight: 600;
-      font-size: 12vmin;
-      margin-left: $left-margin;
+      font-size: 8vmin;
     }
   }
 
-  #about-colors-container {
+  #back-button {
+    @include unskew();
+
     position: absolute;
-    width: 100%;
-    min-height: 100%;
+    top: $base-margin;
+    left: $base-margin;
 
-    top: 0;
-    bottom: 0;
+    z-index: 1;
 
-    display: flex;
-    flex-direction: column;
+    :global(svg) {
+      position: relative;
+      left: -8px;
 
-    overflow-y: auto;
-
-    .color-row {
-      flex: 0 0 $left-margin;
-      transform-origin: top left;
-      div {
-        position: absolute;
-        height: math.div(100vh, $row-count);
-        width: 100%;
-      }
-    }
-
-    @for $i from 1 through $row-count {
-      $row: nth($rows, $i);
-
-      .color-row.row-#{$i} {
-        transform: skewY(math.div(-$global-tilt-angle * ($i - 1), $row-count));
-        div {
-          background-color: nth($row, 1);
-          &::before {
-            @include noise-background(nth($row, 2));
-          }
-        }
-      }
-    }
-
-    #about-paragraph-container {
-      background-color: #f7ece1;
-      transform-origin: top left;
-
-      @include unskew();
-
-      p {
-        margin: $left-margin;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-size: 1.5em;
-        color: $global-dark-text;
-
-        a {
-          text-decoration: underline;
-          color: $global-dark-text;
-        }
-      }
+      color: $global-light-text;
+      font-size: 2em;
     }
   }
 </style>

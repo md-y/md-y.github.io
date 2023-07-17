@@ -23,15 +23,15 @@
     </g>
   </svg>
 </ColorColumn>
-<ColorColumn color="#8d86c9" noiseOpacity={0.6}>
+<ColorColumn color="#8d86c9" noiseOpacity={0.5}>
   <div id="menu-container">
-    <HomepageLink href="about" textAlign="start">About me</HomepageLink>
+    <HomepageLink href="about">About</HomepageLink>
     <HomepageLink href="portfolio">Portfolio</HomepageLink>
-    <HomepageLink href="resume" textAlign="end">Resume</HomepageLink>
+    <HomepageLink href="resume">Resume</HomepageLink>
   </div>
 </ColorColumn>
-<ColorColumn color="#725ac1" noiseOpacity={0.5} />
-<ColorColumn color="#242038" noiseOpacity={0.4} />
+<ColorColumn color="#725ac1" noiseOpacity={0.4} />
+<ColorColumn color="#242038" noiseOpacity={0.3} />
 
 <style lang="scss">
   @import "global.scss";
@@ -43,7 +43,7 @@
   $left-margin-port: 1rem;
 
   #name-svg {
-    position: absolute;
+    position: relative;
     height: $max-col-height;
 
     @include breakpoint-port() {
@@ -74,7 +74,7 @@
 
   #menu-container {
     display: flex;
-    position: absolute;
+    position: relative;
     height: $max-col-height;
     justify-content: space-between;
 

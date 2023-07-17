@@ -1,0 +1,5 @@
+$base-margin: 4vmin;
+
+$total-flex: 9;
+$large-col-flex: 2;
+$large-col-height: calc($global-total-height / $total-flex * $large-col-flex);

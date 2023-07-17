@@ -3,19 +3,19 @@
   import ColorColumn from "$lib/components/ColorColumn.svelte";
   import Img from "@zerodevx/svelte-img";
 
-  import AnnecyImg from "$assets/about/study-abroad/annecy.jpg?run";
+  import PragueImg from "$assets/about/study-abroad/prague.jpg?run";
 </script>
 
 <ColorColumn color="#272635" noiseOpacity={0.15} order={31} size={5}>
   <AboutContent>
     <div class="photo">
-      <Img src={AnnecyImg} alt="Me in front of the light-blue Lake Annecy" />
+      <Img src={PragueImg} alt="An aerial photo of Prague" />
     </div>
     <div class="text">
       <h1>European Study Abroad</h1>
       <p>
-        In June 2023, I participated in a faculty-led ECS Study Abroad program
-        in Prague, Czechia.
+        In June 2023, I participated in a UTD ECS Study Abroad program in
+        Prague, Czechia.
       </p>
       <p>
         Over five weeks, I studied professional technical communication and
@@ -52,7 +52,7 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
-      object-position: 50% 25%;
+      object-position: 50% 10%;
     }
   }
 </style>

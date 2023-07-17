@@ -39,7 +39,7 @@
     margin-top: $base-margin;
 
     @media (max-aspect-ratio: 0.65) {
-      margin-top: 15%;
+      margin-top: 10%;
     }
 
     :global(h1),

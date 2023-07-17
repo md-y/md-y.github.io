@@ -10,7 +10,7 @@
   import AcmImg from "$assets/about/acm.png?run";
   import SilverjackImg from "$assets/about/silverjack.png?run";
   import UtdImg from "$assets/about/utd.png?run";
-  import ViennaImg from "$assets/about/vienna.png?run";
+  import AnnecyImg from "$assets/about/annecy.png?run";
 </script>
 
 <svelte:head>
@@ -21,8 +21,8 @@
 <ColorColumn color="#BFC0C0" noiseOpacity={1} order={41} size={2}>
   <div id="photos-container">
     <AboutPhoto
-      src={ViennaImg}
-      alt="Me in front of statues in Vienna"
+      src={AnnecyImg}
+      alt="Me in front of Lake Annecy in France"
       overlay="Study Abroad"
       href="/about/study-abroad"
     />
@@ -35,7 +35,7 @@
     <AboutPhoto
       src={SilverjackImg}
       alt="A dirt path leading into the woods with a mountain in the background in rural Colorado"
-      overlay="Rural Colorado"
+      overlay="Western Colorado"
       href="/about/colorado"
     />
     <AboutPhoto

@@ -39,8 +39,8 @@
     <div>
       <h1>ACM Research</h1>
       <p>
-        I worked as a IOT security researcher and web developer for a project
-        about the Bangle.js 2 smart watch.
+        I worked as a security researcher and web developer for a project about
+        the Bangle.js 2 smart watch.
       </p>
     </div>
   </AboutContent>

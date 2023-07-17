@@ -16,7 +16,7 @@
         >
           Collegium V Honors Society,
         </a>
-        and I have been awarded a place on the
+        and I have been on the
         <a
           href="https://www.utdallas.edu/current/deans-list/"
           title="UTD Dean's List"
@@ -31,14 +31,14 @@
       <h1>Grade</h1>
       <p>
         I'm currently a second-year, Junior-standing undergraduate student at
-        UTD. I'm expected to graduate May 2026.
+        UTD. I'm on track to graduate by May 2025.
       </p>
     </div>
     <div>
       <h1>National Merit</h1>
       <p>
         I'm attending UTD on a full-ride scholarship awarded to National Merit
-        Finalists by the school.
+        Finalists.
       </p>
     </div>
   </AboutContent>

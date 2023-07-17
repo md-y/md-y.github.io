@@ -20,10 +20,10 @@
     </div>
     <div class="text">
       <h1>Western Colorado</h1>
-      <p>I'm from the beautiful rural town of Montrose, Colorado.</p>
+      <p>I'm from the beautiful town of Montrose, Colorado.</p>
       <p>
-        I love spending time in the surrounding Uncompahgre Valley and San Juan
-        mountains.
+        I love spending time in the surrounding Uncompahgre Valley, San Juan
+        mountains, and the nearby world-class Telluride ski resort.
       </p>
     </div>
   </AboutContent>
@@ -40,7 +40,7 @@
       flex: 2 2;
     }
 
-    @media (max-aspect-ratio: 0.55) {
+    @media (max-aspect-ratio: 0.5) {
       flex: 1 1;
     }
 

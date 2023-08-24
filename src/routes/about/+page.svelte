@@ -1,12 +1,10 @@
 <script lang="ts">
+  import BackButton from "$lib/components/BackButton.svelte";
   import ColorColumn from "$lib/components/ColorColumn.svelte";
-  import MdiChevronUp from "~icons/mdi/chevron-up";
 </script>
 
 <ColorColumn color="#242038" noiseOpacity={0.25} order={21} size={2}>
-  <a id="back-button" href="/">
-    <MdiChevronUp />
-  </a>
+  <BackButton />
   <div class="text-container title">
     <h1>Hi, I'm Sam</h1>
   </div>
@@ -58,24 +56,6 @@
       font-family: "Inter", sans-serif;
       font-weight: 600;
       font-size: 8vmin;
-    }
-  }
-
-  #back-button {
-    @include unskew();
-
-    position: absolute;
-    top: $base-margin;
-    left: $base-margin;
-
-    z-index: 1;
-
-    :global(svg) {
-      position: relative;
-      left: -8px;
-
-      color: $global-light-text;
-      font-size: 2em;
     }
   }
 </style>

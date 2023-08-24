@@ -108,5 +108,9 @@
         opacity: 0;
       }
     }
+
+    &.selected .overlay {
+      font-weight: bold;
+    }
   }
 </style>

@@ -4,7 +4,7 @@
 
 <svelte:head>
   <Stylesheet
-    href="https://fonts.googleapis.com/css?family=Inter:black,bold,regular|Roboto:regular&display=swap"
+    href="https://fonts.googleapis.com/css?family=Inter:black,bold,regular|Roboto:regular,bold&display=swap"
     defer
   />
 </svelte:head>

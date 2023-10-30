@@ -12,26 +12,47 @@
     <h1>Portfolio</h1>
   </div>
 </ColorColumn>
-<ColorColumn color="#f7ece1" noiseOpacity={1} order={12}>
-  <PortfolioItem />
-</ColorColumn>
-<ColorColumn color="#cac4ce" noiseOpacity={0.9} order={13}>
-  <PortfolioItem />
-</ColorColumn>
-<ColorColumn color="#8d86c9" noiseOpacity={0.5} order={14}>
-  <PortfolioItem />
-</ColorColumn>
-<ColorColumn color="#725ac1" noiseOpacity={0.4} order={15}>
-  <PortfolioItem />
-</ColorColumn>
-<ColorColumn color="#8d86c9" noiseOpacity={0.5} order={16}>
-  <PortfolioItem />
+<ColorColumn color="#f7ece1" noiseOpacity={1} order={12} size={5}>
+  <div class="warning" />
+  <div class="temp-text">
+    <h1>Sorry, but this page is not finished yet.</h1>
+    <h2>
+      If you are interested in my projects, please visit my <a
+        href="https://github.com/md-y">GitHub</a
+      >.
+    </h2>
+  </div>
 </ColorColumn>
 <ColorColumn color="#242038" noiseOpacity={0.3} size={2} order={17} />
 
 <style lang="scss">
   @use "sass:math";
   @import "global.scss";
+
+  .warning {
+    background-image: repeating-linear-gradient(
+      -55deg,
+      #000,
+      #000 20px,
+      #ffb101 20px,
+      #ffb101 40px
+    );
+    height: 2rem;
+  }
+
+  .temp-text {
+    font-family: "Roboto", sans-serif;
+    margin-left: $base-margin;
+    @include unskew-rotate();
+
+    h1 {
+      font-size: 6vmin;
+    }
+
+    h2 {
+      font-size: 3vmin;
+    }
+  }
 
   #title-container {
     display: flex;
@@ -45,7 +66,7 @@
       color: #f7ece1;
       font-family: "Inter", sans-serif;
       font-weight: 600;
-      font-size: 12vmin;
+      font-size: 10vmin;
       margin-left: $base-margin;
     }
   }

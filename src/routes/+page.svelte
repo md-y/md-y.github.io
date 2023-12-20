@@ -9,19 +9,10 @@
 
 <ColorColumn color="#f7ece1" noiseOpacity={1} />
 <ColorColumn color="#cac4ce" noiseOpacity={0.9}>
-  <svg id="name-svg" viewBox="0 0 117 20">
-    <g class="name-large">
-      <text x="0" y="11" alignment-baseline="middle">SAM PRESTON</text>
-    </g>
-    <g class="name-small">
-      <text x="0" y="3" font-size="50%" alignment-baseline="hanging">
-        SAMUEL
-      </text>
-      <text x="0" y="17" font-size="50%" alignment-baseline="baseline">
-        PRESTON
-      </text>
-    </g>
-  </svg>
+  <div id="name-container">
+    <h1 class="land">SAM PRESTON</h1>
+    <h1 class="port">SAMUEL <br /> PRESTON</h1>
+  </div>
 </ColorColumn>
 <ColorColumn color="#8d86c9" noiseOpacity={0.5}>
   <div id="menu-container">
@@ -42,33 +33,40 @@
   $left-margin-land: 2rem;
   $left-margin-port: 1rem;
 
-  #name-svg {
+  #name-container {
     position: relative;
     height: $max-col-height;
+    display: flex;
+    align-items: center;
 
-    @include breakpoint-port() {
-      left: $left-margin-port;
-      .name-large {
-        display: none;
-      }
-      .name-small {
-        display: block;
-      }
-    }
-    @include breakpoint-land() {
-      left: $left-margin-land;
-      .name-large {
-        display: block;
-      }
-      .name-small {
-        display: none;
-      }
-    }
-
-    text {
-      fill: $global-dark-text;
+    h1 {
+      margin: 0;
+      color: $global-dark-text;
       font-family: "Inter", sans-serif;
       font-weight: 900;
+
+      &.land {
+        display: none;
+      }
+      &.port {
+        display: none;
+      }
+
+      @include breakpoint-port() {
+        margin-left: $left-margin-port;
+        font-size: calc($max-col-height * 0.4);
+        line-height: calc($max-col-height / 2.25);
+        &.port {
+          display: block;
+        }
+      }
+      @include breakpoint-land() {
+        margin-left: $left-margin-land;
+        font-size: calc($max-col-height * 0.8);
+        &.land {
+          display: block;
+        }
+      }
     }
   }
 

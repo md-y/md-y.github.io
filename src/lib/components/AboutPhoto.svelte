@@ -61,6 +61,11 @@
       transition: opacity $hover-transition-time;
     }
 
+    :global(picture) {
+      display: flex;
+      justify-content: center;
+    }
+
     :global(img) {
       height: 100%;
       width: auto;

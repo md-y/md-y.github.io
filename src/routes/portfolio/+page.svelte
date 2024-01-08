@@ -1,10 +1,15 @@
 <script lang="ts">
   import BackButton from "$lib/components/BackButton.svelte";
   import ColorColumn from "$lib/components/ColorColumn.svelte";
-  import PortfolioItem from "$lib/components/PortfolioItem.svelte";
-
-  import RememberMeImg from "$assets/portfolio/rememberme.png?run";
+  // import PortfolioItem from "$lib/components/PortfolioItem.svelte";
+  // import RememberMeImg from "$assets/portfolio/rememberme.png?run";
+  import PageInfo from "$lib/components/PageInfo.svelte";
 </script>
+
+<PageInfo
+  title="Portfolio"
+  description="Here you can view all of my public work including personal, professional, and university projects."
+/>
 
 <ColorColumn color="#242038" noiseOpacity={0.4} size={2} order={11}>
   <BackButton />

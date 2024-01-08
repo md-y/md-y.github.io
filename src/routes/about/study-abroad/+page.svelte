@@ -2,9 +2,15 @@
   import AboutContent from "$lib/components/AboutContent.svelte";
   import ColorColumn from "$lib/components/ColorColumn.svelte";
   import Img from "@zerodevx/svelte-img";
+  import PageInfo from "$lib/components/PageInfo.svelte";
 
   import PragueImg from "$assets/about/study-abroad/prague.jpg?run";
 </script>
+
+<PageInfo
+  title="Study Abroad"
+  description="In June 2023, I participated in a European study abroad in Prague, Czechia."
+/>
 
 <ColorColumn color="#272635" noiseOpacity={0.15} order={31} size={5}>
   <AboutContent>

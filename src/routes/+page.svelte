@@ -1,11 +1,13 @@
 <script lang="ts">
   import ColorColumn from "$lib/components/ColorColumn.svelte";
   import HomepageLink from "$lib/components/HomepageLink.svelte";
+  import PageInfo from "$lib/components/PageInfo.svelte";
 </script>
 
-<svelte:head>
-  <title>Samuel Preston</title>
-</svelte:head>
+<PageInfo
+  title="Samuel Preston"
+  description="Samuel Preston is a National Merit Scholar studying Software Engineering at the University of Texas at Dallas."
+/>
 
 <ColorColumn color="#f7ece1" noiseOpacity={1} />
 <ColorColumn color="#cac4ce" noiseOpacity={0.9}>

@@ -1,7 +1,13 @@
 <script lang="ts">
   import AboutContent from "$lib/components/AboutContent.svelte";
   import ColorColumn from "$lib/components/ColorColumn.svelte";
+  import PageInfo from "$lib/components/PageInfo.svelte";
 </script>
+
+<PageInfo
+  title="UTD"
+  description="I am an undergraduate student at the University of Texas at Dallas."
+/>
 
 <ColorColumn color="#2D3047" noiseOpacity={0.25} order={34} size={5}>
   <AboutContent>

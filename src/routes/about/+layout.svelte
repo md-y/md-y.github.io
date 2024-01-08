@@ -13,10 +13,6 @@
   import AnnecyImg from "$assets/about/annecy.png?run";
 </script>
 
-<svelte:head>
-  <title>About Me</title>
-</svelte:head>
-
 <slot />
 <ColorColumn color="#BFC0C0" noiseOpacity={1} order={41} size={2}>
   <div id="photos-container">

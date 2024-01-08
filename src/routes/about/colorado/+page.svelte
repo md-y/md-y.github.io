@@ -2,10 +2,16 @@
   import AboutContent from "$lib/components/AboutContent.svelte";
   import ColorColumn from "$lib/components/ColorColumn.svelte";
   import Img from "@zerodevx/svelte-img";
+  import PageInfo from "$lib/components/PageInfo.svelte";
 
   import SilverjackImg from "$assets/about/colorado/silverjack_cliff.jpg?run";
   import PonderosaImg from "$assets/about/colorado/ponderosa.jpg?run";
 </script>
+
+<PageInfo
+  title="Colorado"
+  description="I am from the beautiful town of Montrose, Colorado."
+/>
 
 <ColorColumn color="#232C33" noiseOpacity={0.25} order={33} size={5}>
   <AboutContent>

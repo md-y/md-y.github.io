@@ -1,8 +1,14 @@
 <script lang="ts">
   import BackButton from "$lib/components/BackButton.svelte";
   import ColorColumn from "$lib/components/ColorColumn.svelte";
+  import PageInfo from "$lib/components/PageInfo.svelte";
   import ResumeLink from "$lib/components/ResumeLink.svelte";
 </script>
+
+<PageInfo
+  title="My Resume"
+  description="Here you can download and view my resume in a PDF format."
+/>
 
 <ColorColumn color="#242038" noiseOpacity={0.4} order={11}>
   <BackButton />

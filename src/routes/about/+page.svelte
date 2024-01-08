@@ -1,7 +1,13 @@
 <script lang="ts">
   import BackButton from "$lib/components/BackButton.svelte";
   import ColorColumn from "$lib/components/ColorColumn.svelte";
+  import PageInfo from "$lib/components/PageInfo.svelte";
 </script>
+
+<PageInfo
+  title="About Me"
+  description="This is where you can learn some things about my life such as my hometown and past experiences."
+/>
 
 <ColorColumn color="#242038" noiseOpacity={0.25} order={21} size={2}>
   <BackButton />

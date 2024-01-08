@@ -2,7 +2,7 @@
   import MdiChevronUp from "~icons/mdi/chevron-up";
 </script>
 
-<a id="back-button" href="/">
+<a id="back-button" href="/" title="Back">
   <MdiChevronUp />
 </a>
 

@@ -7,7 +7,7 @@
   import SimpleIconsHandshake from "~icons/simple-icons/handshake";
   import SimpleIconsGithub from "~icons/simple-icons/github";
 
-  import AcmImg from "$assets/about/acm.png?run";
+  import AwardsImg from "$assets/about/hacksmu.jpg?run";
   import SilverjackImg from "$assets/about/silverjack.png?run";
   import UtdImg from "$assets/about/utd.png?run";
   import AnnecyImg from "$assets/about/annecy.png?run";
@@ -23,10 +23,10 @@
       href="/about/study-abroad"
     />
     <AboutPhoto
-      src={AcmImg}
-      alt="Me presenting on stage"
-      overlay="ACM"
-      href="/about/acm"
+      src={AwardsImg}
+      alt="Me receiving an award at a Hackathon"
+      overlay="Awards"
+      href="/about/awards"
     />
     <AboutPhoto
       src={SilverjackImg}

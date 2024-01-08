@@ -6,6 +6,8 @@
 
   import SilverjackImg from "$assets/about/colorado/silverjack_cliff.jpg?run";
   import PonderosaImg from "$assets/about/colorado/ponderosa.jpg?run";
+  import SoapCreekImg from "$assets/about/colorado/soap_creek.jpg?run";
+  import SeeForeverImg from "$assets/about/colorado/see_forever.jpg?run";
 </script>
 
 <PageInfo
@@ -15,14 +17,32 @@
 
 <ColorColumn color="#232C33" noiseOpacity={0.25} order={33} size={5}>
   <AboutContent>
-    <div class="photo">
-      <Img src={SilverjackImg} alt="Cliffs near Silver Jack reservoir" />
-    </div>
-    <div class="photo">
-      <Img
-        src={PonderosaImg}
-        alt="Sunrise at the Ponderosa campgrounds near Blue Mesa reservoir"
-      />
+    <div class="gallery">
+      <div class="row">
+        <div class="photo">
+          <Img src={SilverjackImg} alt="Cliffs near Silver Jack reservoir" />
+        </div>
+        <div class="photo">
+          <Img
+            src={PonderosaImg}
+            alt="Sunrise at the Ponderosa campgrounds near Blue Mesa reservoir"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="photo">
+          <Img
+            src={SeeForeverImg}
+            alt="View from the See Forever trail at Telluride Ski Resort"
+          />
+        </div>
+        <div class="photo">
+          <Img
+            src={SoapCreekImg}
+            alt="View of water at the Soap Creek campgrounds near Blue Mesa reservoir"
+          />
+        </div>
+      </div>
     </div>
     <div class="text">
       <h1>Western Colorado</h1>
@@ -55,11 +75,29 @@
     }
   }
 
-  .photo {
-    position: relative;
-    flex: 1 1;
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    flex: 2 2;
 
     min-height: $large-col-height;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+
+    width: 100%;
+    height: 50%;
+  }
+
+  .photo {
+    position: relative;
+    height: 100%;
+    flex: 1 1;
 
     :global(img) {
       position: absolute;

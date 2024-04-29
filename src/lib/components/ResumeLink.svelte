@@ -8,9 +8,7 @@
   style:--offset={offset}
   style:--abs-offset={Math.abs(offset)}
 >
-  <a href="/Resume%20No%20Contact.pdf" class:dark target="_blank">
-    View Resume
-  </a>
+  <a href="/resume.pdf" class:dark target="_blank"> View Resume </a>
 </div>
 
 <style lang="scss">
@@ -49,7 +47,9 @@
       background-position: right;
       background-clip: text;
       -webkit-background-clip: text;
-      transition: background-position 250ms, scale 250ms;
+      transition:
+        background-position 250ms,
+        scale 250ms;
 
       background-image: linear-gradient(
         to right,

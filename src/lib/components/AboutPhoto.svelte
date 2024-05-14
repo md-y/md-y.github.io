@@ -1,5 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { fly } from "svelte/transition";
+  import { quartOut } from "svelte/easing";
 
   import MaterialSymbolsOpenInNew from "~icons/material-symbols/open-in-new";
 
@@ -7,12 +9,23 @@
   export let alt: string;
   export let overlay: string;
   export let href: string;
+  export let introDelay = 0;
 
   let selected = false;
   $: selected = $page.route.id === href;
 </script>
 
-<div class="photo" class:selected>
+<div
+  class="photo"
+  class:selected
+  in:fly={{
+    x: 100,
+    y: -15,
+    delay: introDelay,
+    duration: 300,
+    easing: quartOut,
+  }}
+>
   <enhanced:img {src} {alt} />
   <a class="overlay" href={selected ? "/about" : href}>{overlay}</a>
   <div class="hint-icon">

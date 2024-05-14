@@ -1,11 +1,10 @@
 <script lang="ts">
-  import Img from "@zerodevx/svelte-img";
-  import RememberMeImg from "$assets/portfolio/rememberme.png?run";
+  import RememberMeImg from "$assets/portfolio/rememberme.png?enhanced";
 </script>
 
 <div class="portfolio-item">
   <div class="photo">
-    <Img src={RememberMeImg} />
+    <enhanced:img src={RememberMeImg} alt="RememberMe Logo" />
   </div>
   <div class="text">
     <h1>RememberMe</h1>

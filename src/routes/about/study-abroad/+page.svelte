@@ -1,10 +1,9 @@
 <script lang="ts">
   import AboutContent from "$lib/components/AboutContent.svelte";
   import ColorColumn from "$lib/components/ColorColumn.svelte";
-  import Img from "@zerodevx/svelte-img";
   import PageInfo from "$lib/components/PageInfo.svelte";
 
-  import PragueImg from "$assets/about/study-abroad/prague.jpg?run";
+  import PragueImg from "$assets/about/study-abroad/prague.jpg?enhanced";
 </script>
 
 <PageInfo
@@ -15,7 +14,7 @@
 <ColorColumn color="#272635" noiseOpacity={0.15} order={31} size={5}>
   <AboutContent>
     <div class="photo">
-      <Img src={PragueImg} alt="An aerial photo of Prague" />
+      <enhanced:img src={PragueImg} alt="An aerial photo of Prague" />
     </div>
     <div class="text">
       <h1>European Study Abroad</h1>

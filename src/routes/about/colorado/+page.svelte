@@ -1,13 +1,12 @@
 <script lang="ts">
   import AboutContent from "$lib/components/AboutContent.svelte";
   import ColorColumn from "$lib/components/ColorColumn.svelte";
-  import Img from "@zerodevx/svelte-img";
   import PageInfo from "$lib/components/PageInfo.svelte";
 
-  import SilverjackImg from "$assets/about/colorado/silverjack_cliff.jpg?run";
-  import PonderosaImg from "$assets/about/colorado/ponderosa.jpg?run";
-  import SoapCreekImg from "$assets/about/colorado/soap_creek.jpg?run";
-  import SeeForeverImg from "$assets/about/colorado/see_forever.jpg?run";
+  import SilverjackImg from "$assets/about/colorado/silverjack_cliff.jpg?enhanced";
+  import PonderosaImg from "$assets/about/colorado/ponderosa.jpg?enhanced";
+  import SoapCreekImg from "$assets/about/colorado/soap_creek.jpg?enhanced";
+  import SeeForeverImg from "$assets/about/colorado/see_forever.jpg?enhanced";
 </script>
 
 <PageInfo
@@ -20,10 +19,13 @@
     <div class="gallery">
       <div class="row">
         <div class="photo">
-          <Img src={SilverjackImg} alt="Cliffs near Silver Jack reservoir" />
+          <enhanced:img
+            src={SilverjackImg}
+            alt="Cliffs near Silver Jack reservoir"
+          />
         </div>
         <div class="photo">
-          <Img
+          <enhanced:img
             src={PonderosaImg}
             alt="Sunrise at the Ponderosa campgrounds near Blue Mesa reservoir"
           />
@@ -31,13 +33,13 @@
       </div>
       <div class="row">
         <div class="photo">
-          <Img
+          <enhanced:img
             src={SeeForeverImg}
             alt="View from the See Forever trail at Telluride Ski Resort"
           />
         </div>
         <div class="photo">
-          <Img
+          <enhanced:img
             src={SoapCreekImg}
             alt="View of water at the Soap Creek campgrounds near Blue Mesa reservoir"
           />

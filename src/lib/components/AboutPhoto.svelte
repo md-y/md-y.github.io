@@ -1,10 +1,9 @@
 <script lang="ts">
-  import Img from "@zerodevx/svelte-img";
   import { page } from "$app/stores";
 
   import MaterialSymbolsOpenInNew from "~icons/material-symbols/open-in-new";
 
-  export let src: Object[];
+  export let src: EnhancedImage;
   export let alt: string;
   export let overlay: string;
   export let href: string;
@@ -14,7 +13,7 @@
 </script>
 
 <div class="photo" class:selected>
-  <Img {src} {alt} draggable="false" />
+  <enhanced:img {src} {alt} />
   <a class="overlay" href={selected ? "/about" : href}>{overlay}</a>
   <div class="hint-icon">
     <div>

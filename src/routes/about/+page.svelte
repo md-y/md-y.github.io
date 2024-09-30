@@ -22,12 +22,12 @@
 </ColorColumn>
 <ColorColumn color="#4F5D75" noiseOpacity={0.3} order={26}>
   <div class="text-container list">
-    <h1>Software Engineering Major</h1>
+    <h1>SE @ UTD ☄️</h1>
   </div>
 </ColorColumn>
 <ColorColumn color="#7D8CA3" noiseOpacity={0.5} order={27}>
   <div class="text-container list">
-    <h1>University of Texas at Dallas</h1>
+    <h1>Origami Risk</h1>
   </div>
 </ColorColumn>
 

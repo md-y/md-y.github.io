@@ -36,8 +36,8 @@
     <div>
       <h1>Grade</h1>
       <p>
-        I'm currently a second-year, Junior-standing undergraduate student at
-        UTD. I'm on track to graduate by May 2025.
+        I'm currently a senior undergraduate student at UTD. I'm on track to
+        graduate by May 2025.
       </p>
     </div>
     <div>

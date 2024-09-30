@@ -11,6 +11,7 @@
   import SilverjackImg from "$assets/about/silverjack.png?enhanced";
   import UtdImg from "$assets/about/utd.png?enhanced";
   import AnnecyImg from "$assets/about/annecy.png?enhanced";
+  import ChicagoImg from "$assets/about/chicago.png?enhanced";
 
   let colAnimating = false;
 </script>
@@ -29,10 +30,10 @@
   <div id="photos-container">
     {#if !colAnimating}
       <AboutPhoto
-        src={AnnecyImg}
-        alt="Me in front of Lake Annecy in France"
-        overlay="Study Abroad"
-        href="/about/study-abroad"
+        src={ChicagoImg}
+        alt="View of the evening Chicago skyline"
+        overlay="Origami"
+        href="/about/origami"
         introDelay={0}
       />
       <AboutPhoto
@@ -43,18 +44,25 @@
         introDelay={50}
       />
       <AboutPhoto
+        src={AnnecyImg}
+        alt="Me in front of Lake Annecy in France"
+        overlay="Study Abroad"
+        href="/about/study-abroad"
+        introDelay={100}
+      />
+      <AboutPhoto
         src={SilverjackImg}
         alt="A dirt path leading into the woods with a mountain in the background in rural Colorado"
         overlay="Western Colorado"
         href="/about/colorado"
-        introDelay={100}
+        introDelay={150}
       />
       <AboutPhoto
         src={UtdImg}
         alt="Aerial overview of the University of Texas at Dallas campus"
         overlay="UT Dallas"
         href="/about/utd"
-        introDelay={150}
+        introDelay={200}
       />
     {/if}
   </div>

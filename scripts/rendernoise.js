@@ -24,8 +24,8 @@ const svg = `
 `;
 
 sharp(Buffer.from(svg))
-  .resize(size)
-  .webp({
-    effort: 6,
-  })
-  .toFile("./static/noise.webp");
+    .resize(size)
+    .webp({
+        effort: 6,
+    })
+    .toFile("./static/noise.webp");

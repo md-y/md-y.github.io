@@ -1,10 +1,11 @@
 <script lang="ts">
-    import ColorRow from "$lib/components/ColorRow";
+    import NameRow from "$components/NameRow";
+    import ColorRow from "$components/ColorRow";
 </script>
 
 <ColorRow color="#f7ece1" />
 <ColorRow color="#cac4ce">
-    <h1 class="flex h-full flex-col justify-center text-9xl">New Website!</h1>
+    <NameRow color="#242038" />
 </ColorRow>
 <ColorRow color="#8d86c9" />
 <ColorRow color="#725ac1" />

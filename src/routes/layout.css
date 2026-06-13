@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:black,bold,regular|Roboto:regular,bold&display=swap");
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 @theme {
+    --font-inter: "Inter", sans-serif;
+    --font-roboto: "Roboto", sans-serif;
+
     --base-skew-angle: -8deg;
     --base-skew-padding: calc(abs(tan(var(--base-skew-angle)) * 100vw * 0.5));
 

@@ -24,7 +24,7 @@
     transition:flexTransition
     style:flex
     style:--row-color={color}
-    class="skew bg-(--row-color) after:absolute after:-top-0.5 after:left-0 after:-z-50 after:h-1 after:w-full after:bg-(--row-color)"
+    class="skew bg-(--row-color) after:absolute after:-top-0.5 after:left-0 after:-z-50 after:h-1 after:w-full after:bg-(--row-color) @container-size/color-row"
 >
     <div class="absolute h-full w-full overflow-hidden">
         {@render children?.()}

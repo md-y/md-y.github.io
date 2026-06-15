@@ -17,19 +17,19 @@
     </HomePageLink>
 {/snippet}
 
-<ColorRow color="#f7ece1" />
-<ColorRow color="#cac4ce">
+<ColorRow color="#f7ece1" order={1} noiseOpacity={1} />
+<ColorRow color="#cac4ce" order={2} noiseOpacity={0.9}>
     <NameRow color={textColor} />
 </ColorRow>
-<ColorRow color="#8d86c9">
+<ColorRow color="#8d86c9" order={3} noiseOpacity={0.5}>
     <div class="link-container flex h-full w-full flex-col px-8">
         {@render link(resolve("/about"), "About")}
         {@render link(resolve("/portfolio"), "Portfolio")}
         {@render link(resolve("/resume"), "Resume")}
     </div>
 </ColorRow>
-<ColorRow color="#725ac1" />
-<ColorRow color="#242038" />
+<ColorRow color="#725ac1" order={4} noiseOpacity={0.4} />
+<ColorRow color="#242038" order={5} noiseOpacity={0.3} />
 
 <style lang="postcss">
     @reference "tailwindcss";

@@ -14,12 +14,12 @@
 <style lang="postcss">
     .name-row {
         /* One-line layout */
-        @container color-row (aspect-ratio >= 6.2) {
-            font-size: 80cqh;
+        @container color-row (aspect-ratio >= 6) {
+            font-size: 70cqh;
         }
 
         /* Two-line layout */
-        @container color-row (aspect-ratio < 6.2) {
+        @container color-row (aspect-ratio < 6) {
             font-size: 40cqh;
             line-height: 40cqh;
             max-width: 8ch;
